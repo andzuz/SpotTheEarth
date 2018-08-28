@@ -1,0 +1,77 @@
+
+//extension ViewController {
+//
+//    private func setupScene() {
+//        let scene = setupSceneView()
+//        addEarthModel(to: scene)
+//        addCamera(to: scene)
+//        addLight(to: scene)
+//    }
+//
+//    private func setupSceneView() -> SCNScene? {
+//        guard let sceneView = view as? SCNView else {
+//            assertionFailure()
+//            return nil
+//        }
+//
+//        sceneView.scene = SCNScene()
+//        sceneView.allowsCameraControl = true
+//        sceneView.showsStatistics = true
+//        sceneView.backgroundColor = .black
+//
+//        return sceneView.scene
+//    }
+//
+//    private func addEarthModel(to scene: SCNScene?) {
+//        scene?.rootNode.addChildNode(EarthNode())
+//    }
+//
+//    private func addCamera(to scene: SCNScene?) {
+//        let cameraNode = SCNNode()
+//        cameraNode.camera = SCNCamera()
+//        cameraNode.position = SCNVector3(0.0, 0.0, 2.0)
+//        scene?.rootNode.addChildNode(cameraNode)
+//    }
+//
+//    private func addLight(to scene: SCNScene?) {
+//        let lightNode = SCNNode()
+//        lightNode.light = SCNLight()
+//        lightNode.light?.type = .omni
+//        lightNode.position = SCNVector3(0.0, 4.0, 5.0)
+//        scene?.rootNode.addChildNode(lightNode)
+//    }
+//}
+
+
+//extension ViewController {
+//
+//    private func setupARSceneView() {
+//        sceneView.scene = SCNScene()
+//    }
+//
+//    private func runARSession() {
+//        sceneView.session.run(ARWorldTrackingConfiguration())
+//    }
+//
+//    private func spawnEarthInRandomPosition() {
+//        let earthNode = EarthNode()
+//        earthNode.position = random3DVector
+//        sceneView.scene.rootNode.addChildNode(earthNode)
+//    }
+//
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        if let touch = touches.first {
+//            let location = touch.location(in: sceneView)
+//            let hitTest = sceneView.hitTest(location)
+//
+//            if let hitObject = hitTest.first {
+//                let hitNode = hitObject.node
+//
+//                if hitNode.isKind(of: EarthNode.self) {
+//                    hitNode.removeFromParentNode()
+//                    spawnEarthInRandomPosition()
+//                }
+//            }
+//        }
+//    }
+//}
